@@ -5,8 +5,9 @@ This repository contains an skeleton for the PintOS project.
 
 ## Authors
 
-- <name> <lastname> ([<email>](<email>)
-- <name2> <lastname2> ([<email2>](<email2>)
+- name lastname ([email](email))
+- name lastname ([email](email))
+- name lastname ([email](email))
 
 ## Projects
 
