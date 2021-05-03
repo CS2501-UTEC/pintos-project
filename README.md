@@ -28,13 +28,13 @@ Don't forget to run the following commands in the same folder as the Dockerfile
 - Create the PintOS image
 
 ```console
-foo@bar:~$ docker build -t pintos .
+foo@bar:~$ docker build -t pintos-image .
 ```
 
 - Create a docker volume to made your changes persistent
 
 ```console
-foo@bar:~$ docker create -it --volume $(pwd)/pintos/src:/pintos --name <my-volume-name> pintos
+foo@bar:~$ docker create -it --volume $(pwd)/pintos/src:/pintos --name <my-volume-name> pintos-image
 ```
 
 ## Run the container
