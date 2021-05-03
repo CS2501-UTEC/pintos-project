@@ -64,4 +64,5 @@ Powering off..
 ## References
 
 - [For the dockerfile](https://github.com/JohnStarich/docker-pintos)
+- [For the .gitignore](https://github.com/Berkeley-CS162/group0/blob/master/.gitignore)
 
