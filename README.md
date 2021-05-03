@@ -46,6 +46,12 @@ foo@bar:~$ docker start <my-volume-name>
 foo@bar:~$ docker exec -it <my-volume-name> bash
 ```
 
+Inside the container, you need to run the bash script `build.sh`;
+
+```console
+foo@bar:~$ bash build.sh
+```
+
 To test if you setup is correctly builded, inside the container run the following command and see the following output:
 
 ```console
