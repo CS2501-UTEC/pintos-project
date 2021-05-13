@@ -1,4 +1,4 @@
-chmod -R 755 /pintos
+chmod -R 777 /pintos/utils/
 
 # Fix ACPI bug
 ## Fix described here under "Troubleshooting": http://arpith.xyz/2016/01/getting-started-with-pintos/
@@ -9,7 +9,7 @@ sed -i 's/bochs/qemu/' /pintos/*/Make.vars
 ## Compile Pintos kernel
 cd /pintos/threads && make
 ## Reconfigure Pintos to use QEMU
-sed -i 's/\/home\/vagrant\/.bin/pintos\/misc/' /pintos/utils/pintos-gdb && \
+sed -i 's/\/home\/vagrant\/.bin/\/pintos\/misc/' /pintos/utils/pintos-gdb && \
     sed -i 's/LDFLAGS/LDLIBS/' /pintos/utils/Makefile && \
     sed -i 's/\$sim = "bochs"/\$sim = "qemu"/' /pintos/utils/pintos && \
     sed -i 's/kernel.bin/\/pintos\/threads\/build\/kernel.bin/' /pintos/utils/pintos && \
