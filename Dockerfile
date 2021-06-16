@@ -11,7 +11,7 @@ RUN apt-get update && \
 	gdb qemu-system-x86 \
 	vim build-essential \
 	ctags cgdb \
-	cscope
+	cscope clang
 
 # Fix the qemu path
 #RUN ln -s /bin/qemu-system-i386 /bin/qemu
