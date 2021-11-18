@@ -1,5 +1,5 @@
 # Operating system
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 #Set bash as shell
 SHELL ["/bin/bash", "-c"]
@@ -7,11 +7,12 @@ SHELL ["/bin/bash", "-c"]
 # Install set up tools
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninterative \
-        apt-get install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
 	gdb qemu-system-x86 \
 	vim build-essential \
 	ctags cgdb \
-	cscope clang
+	cscope clang \
+    tmux
 
 # Fix the qemu path
 #RUN ln -s /bin/qemu-system-i386 /bin/qemu
@@ -20,10 +21,12 @@ RUN apt-get update && \
 RUN apt-get clean autoclean && \
     rm -rf /var/lib/apt/* /var/lib/cache/* /var/lib/log/*
 
-
 # Create working directory
-WORKDIR /pintos
-COPY ./pintos/src /pintos
+RUN mkdir -p /pintos/src
+COPY ./pintos/src /pintos/src
 
 # Add Pintos to PATH
-ENV PATH=/pintos/utils:$PATH
+ENV PINTOS_HOME=/pintos
+ENV PATH=/pintos/src/utils:$PATH
+
+WORKDIR /pintos/src
