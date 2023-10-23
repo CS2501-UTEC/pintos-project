@@ -1,5 +1,5 @@
 #!/bin/bash 
-echo "CS2S01 Operating Systems 2021-2"
+echo "CS3015 Operating Systems 2023-2"
 echo "Building the docker image and creating a container attached to a volume."
 name=""
 if [ -z "$1" ]

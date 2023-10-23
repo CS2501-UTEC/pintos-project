@@ -1,29 +1,18 @@
-CS2S01 Operating systems 
+CS3015 Operating systems 
 =======================
 
 This repository contains an skeleton for the PintOS project.
 
-## Authors
+## Author
 
 - name lastname ([email](email))
-- name lastname ([email](email))
-- name lastname ([email](email))
-
-## Projects
-
-Each PintOS project is in an specific branch.
-- Project 1: Threads (branch: [project-1](<link to the branch>))
-
-## Designdocs
-
-The skeletons of the design docs are on the [designdocs](https://github.com/CS2S01-UTEC/pintos-designdocs) repository.
 
 ## Project Setup
 
 **Requirements:**
 - [Docker](https://docs.docker.com/get-docker/)
 
-## Quick setup
+### Quick setup
 
 Just execute the `build.sh` bash script to create your docker image, your container and attach it to a volume. In this way every change you did inside the containers will be replicated to your local folder.
 
@@ -31,7 +20,7 @@ Just execute the `build.sh` bash script to create your docker image, your contai
 foo@bar:~$bash build.sh
 ```
 
-**Step by step:**
+###  Step by step
 
 If you want to execute the bash scripts commands by yourself, you can execute the following commands:
 
@@ -60,10 +49,17 @@ foo@bar:~$ docker start <my-volume-name>
 foo@bar:~$ docker exec -it <my-volume-name> bash
 ```
 
-To test if you setup is correctly builded, inside the container run the following command and see the following output:
+Inside your container, locate the project **threads** and then execute `make`. 
 
 ```console
-foo@bar:~$ pintos -q run alarm-multiple
+container:/pintos/src$ cd threads/
+container:/pintos/src/threads$ make
+```
+
+To test if your build was correctly, run the following command and you must see the following output:
+
+```console
+container:/pintos/src/threads$ pintos -q run alarm-multiple
 ...
 (alarm-multiple) end
 Execution of 'alarm-multiple' complete.
